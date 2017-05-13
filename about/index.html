@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{width: 960px;margin: 10px auto;background-color: #e6e6e6;}
+    #resume{width: 938px;margin: 0 auto;padding:0 10px;border:1px solid black;background-color: white;position:relative;height:1000px;/*333*/}
+    #resume #side{width: 200px;padding:10px;position:absolute;top:0px;left:30px;background-color:#f1f1f1;height: 980px;/*3333*/}
+    #resume #main{width: 668px;padding:10px;position:absolute;top:0px;left:250px;height: 980px;/*background-color:red;3333*/}
+    ul{padding:0;}
+    li{list-style: none}
+
+    /** side **/
+    #side h1{color: #94b6d2;text-align: center;font-family: 华文宋体;font-size: 38px;}
+    #side .photoFrame{width: 160px;height: 160px;border: 2px solid white;margin: 0 auto;overflow: hidden;}
+    #side .photoFrame img{width: 160px;height: 160px;}
+    #side h2{color:#404040;text-align: center;font-family: 华文宋体;font-size:22px;}
+    #side p{text-align: center;font-size: 14px;line-height: 0;}
+    #side .base{}
+    #side .banner{height: 30px;color:white;line-height:30px;text-align:center;font-weight:bold;background-color:#5b9bd5;border:2px outset #5394cf;border-radius: 5px;}
+    #side ul{}
+    #side ul li{font-size: 14px;margin: 5px;}
+
+    /** 滑条样式 **/
+    .skill .range{width: 188px;height: 20px;background-color: #ccc;border-radius: 10px;overflow: hidden;border:2px inset #5394cf;}
+    .skill .range .slid{width: 150px;height: 20px;background-color: #5b9bd5;float: left;}
+    .skill .range .sphere{}
+
+    /** main **/
+    #main img{display: inline-block;}
+    #main h2{display: inline-block;padding-left: 10px;margin-bottom: 0;}
+    #main li{display: inline-block;width: 204px;text-align: center;}
+    #main .add{position: absolute;right: 0;bottom: 0;}
+    #main .edu,#main .item,#main .job,#main .honor{position: relative;}
+
+
+</style>
+<body>
+<div id="resume" class="clear">
+    <div id="side">
+        <h1>RESUME</h1>
+        <div class="photoFrame">
+            <img src="img/zwx.gif" alt="photo" />
+        </div>
+        <h2>钟稳霞</h2>
+        <p>Web前端开发相关工作</p>
+        <div class="base">
+            <div class="banner">
+                基本信息
+            </div>
+            <ul>
+                <li><strong>电话： </strong>15229239276</li>
+                <li><strong>籍贯： </strong>湖北省黄冈市</li>
+                <li><strong>出生日期： </strong>1991.11.01</li>
+                <li><strong>邮箱： </strong>892102951@qq.com</li>
+                <li><strong>地址： </strong>陕西省西安市</li>
+            </ul>
+        </div>
+        <div class="skill">
+            <div class="banner">
+                专业技能
+            </div>
+            <ul>
+                <li>
+                    <strong>HTML5、CSS3、JavaScript</strong>
+                    <div class="range">
+                        <div class="slid"></div>
+                        <div class="sphere"></div>
+                    </div>
+                </li>
+                <li>
+                    <strong>jQuery、Java</strong>
+                    <div class="range">
+                        <div class="slid"></div>
+                        <div class="sphere"></div>
+                    </div>
+                </li>
+                <li>
+                    <strong>JSON、Ajax、XML、Bootstrap</strong>
+                    <div class="range">
+                        <div class="slid"></div>
+                        <div class="sphere"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <div class="edu">
+            <img src="img/education.png" alt="edu" />
+            <h2>教育经历</h2>
+            <hr />
+            <ul>
+                <li><strong>西安电子科技大学</strong></li>
+                <li>电子与通信工程</li>
+                <li>硕士研究生</li>
+            </ul>
+            <input type="button" value="+" class="add"/>
+        </div>
+        <div class="item">
+            <img src="img/job.png" alt="item" />
+            <h2>项目经验</h2>
+            <hr />
+            <ul>
+                <li>西安电子科技大学</li>
+                <li>电子与通信工程</li>
+                <li>硕士研究生</li>
+            </ul>
+            <input type="button" value="+" class="add" />
+        </div>
+        <div class="job">
+            <img src="img/job.png" alt="job" />
+            <h2>工作经验</h2>
+            <hr />
+            <ul>
+                <li>西安电子科技大学</li>
+                <li>电子与通信工程</li>
+                <li>硕士研究生</li>
+            </ul>
+            <input type="button" value="+" class="add" />
+        </div>
+        <div class="honor">
+            <img src="img/honor.png" alt="honor" />
+            <h2>荣誉证书</h2>
+            <hr />
+            <ul>
+                <li>西安电子科技大学</li>
+                <li>电子与通信工程</li>
+                <li>硕士研究生</li>
+            </ul>
+            <input type="button" value="+" class="add" />
+        </div>
+        <div class="evaluate">
+            <img src="img/evaluate.png" alt="evaluate" />
+            <h2>自我评价</h2>
+            <hr />
+            <input type="text" value="本人热情大方" />
+            <input type="button" value="edit" />
+        </div>
+    </div>
+</div>
+</body>
+</html>
