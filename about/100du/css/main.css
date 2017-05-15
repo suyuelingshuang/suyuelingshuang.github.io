@@ -10,7 +10,7 @@ img { border:none; vertical-align:top; }
 table { border-collapse:collapse; }
 input,textarea { outline:none; } /*去掉聚焦时出现的边框高亮效果*/
 textarea { resize:none; overflow:auto; }/*禁止调整大小*/
-body { font-size:12px; font-family:"微软雅黑"; }
+body { font-size:12px; font-family:"微软雅黑";margin:0 auto; }
 /* end reset */
 
 /*public*/
