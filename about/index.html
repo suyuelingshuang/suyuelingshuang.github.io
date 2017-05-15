@@ -2,41 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>RESUME</title>
+    <link rel="stylesheet" href="css/resume.css" />
+    <script src="js/basicJs.js"></script>
+    <script src="js/main.js"></script>
 </head>
-<style>
-    body{width: 960px;margin: 10px auto;background-color: #e6e6e6;}
-    #resume{width: 938px;margin: 0 auto;padding:0 10px;border:1px solid black;background-color: white;position:relative;height:1000px;/*333*/}
-    #resume #side{width: 200px;padding:10px;position:absolute;top:0px;left:30px;background-color:#f1f1f1;height: 980px;/*3333*/}
-    #resume #main{width: 668px;padding:10px;position:absolute;top:0px;left:250px;height: 980px;/*background-color:red;3333*/}
-    ul{padding:0;}
-    li{list-style: none}
-
-    /** side **/
-    #side h1{color: #94b6d2;text-align: center;font-family: 华文宋体;font-size: 38px;}
-    #side .photoFrame{width: 160px;height: 160px;border: 2px solid white;margin: 0 auto;overflow: hidden;}
-    #side .photoFrame img{width: 160px;height: 160px;}
-    #side h2{color:#404040;text-align: center;font-family: 华文宋体;font-size:22px;}
-    #side p{text-align: center;font-size: 14px;line-height: 0;}
-    #side .base{}
-    #side .banner{height: 30px;color:white;line-height:30px;text-align:center;font-weight:bold;background-color:#5b9bd5;border:2px outset #5394cf;border-radius: 5px;}
-    #side ul{}
-    #side ul li{font-size: 14px;margin: 5px;}
-
-    /** 滑条样式 **/
-    .skill .range{width: 188px;height: 20px;background-color: #ccc;border-radius: 10px;overflow: hidden;border:2px inset #5394cf;}
-    .skill .range .slid{width: 150px;height: 20px;background-color: #5b9bd5;float: left;}
-    .skill .range .sphere{}
-
-    /** main **/
-    #main img{display: inline-block;}
-    #main h2{display: inline-block;padding-left: 10px;margin-bottom: 0;}
-    #main li{display: inline-block;width: 204px;text-align: center;}
-    #main .add{position: absolute;right: 0;bottom: 0;}
-    #main .edu,#main .item,#main .job,#main .honor{position: relative;}
-
-
-</style>
 <body>
 <div id="resume" class="clear">
     <div id="side">
@@ -96,6 +66,7 @@
                 <li><strong>西安电子科技大学</strong></li>
                 <li>电子与通信工程</li>
                 <li>硕士研究生</li>
+                <li>2015.9 - 2018.7</li>
             </ul>
             <input type="button" value="+" class="add"/>
         </div>
@@ -103,22 +74,54 @@
             <img src="img/job.png" alt="item" />
             <h2>项目经验</h2>
             <hr />
-            <ul>
-                <li>西安电子科技大学</li>
-                <li>电子与通信工程</li>
-                <li>硕士研究生</li>
-            </ul>
+            <ol>
+                <li>
+                    <a href="100du">商务网站开发：运用HTML+CSS实现页面布局，JavaScript实现基本功能。</a>
+                    <dl>
+                        <dt>项目描述：</dt>
+                        <dd>HTML页面整体布局，CSS实现表现样式，JS添加页面效果；</dd>
+                        <dd>实现页面图片放大镜效果，层级菜单，二级联动；</dd>
+                        <dd>能够使用定时器实现图片轮播、滚动新闻等功能；</dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="Wedding">乐队宣传主页：运用JavaScript DOM实现响应式布局。</a>
+                    <dl>
+                        <dt>项目描述：</dt>
+                        <dd>HTML页面整体布局，CSS实现表现样式，JS添加页面效果；</dd>
+                        <dd>使用DOM脚本设置样式，配合JS为页面添加动态效果；</dd>
+                        <dd>使用Ajax模拟实现表单提交、页面交互过程；</dd>
+                    </dl>
+                </li>
+            </ol>
             <input type="button" value="+" class="add" />
         </div>
         <div class="job">
             <img src="img/job.png" alt="job" />
             <h2>工作经验</h2>
             <hr />
-            <ul>
-                <li>西安电子科技大学</li>
-                <li>电子与通信工程</li>
-                <li>硕士研究生</li>
-            </ul>
+            <ol>
+                <li>
+                    <ul class="title">
+                        <li class="left">2015.7-2015.8</li><li>湖北创锐精密轴承有限公司</li><li class="right">前端开发实习生</li>
+                    </ul>
+                    <dl>
+                        <dt><a href="">工作收获：</a></dt>
+                        <dd>学会了运用HTML+CSS实现页面布局，JavaScript实现基本功能；</dd>
+                        <dd>组织过课程培训，使我的人际交往能力、组织能力、信息搜索能力有很大的提升；</dd>
+                    </dl>
+                </li>
+                <li>
+                    <ul class="title">
+                        <li class="left">2015.9至今</li><li>西安电子科技大学研究生会</li><li class="right">主席助理、体育部副部长、外联部干事</li>
+                    </ul>
+                    <dl>
+                        <dt><a href="">工作收获：</a></dt>
+                        <dd>策划组织过校园歌手大赛、趣味运动会、篮球赛等大型校园集体活动；</dd>
+                        <dd>使我的人际交往能力、组织能力、应变能力有很大的提升；</dd>
+                    </dl>
+                </li>
+            </ol>
             <input type="button" value="+" class="add" />
         </div>
         <div class="honor">
@@ -126,9 +129,9 @@
             <h2>荣誉证书</h2>
             <hr />
             <ul>
-                <li>西安电子科技大学</li>
-                <li>电子与通信工程</li>
-                <li>硕士研究生</li>
+                <li><strong>荣誉奖励</strong>青岛理工大学校长奖学金、优秀青年志愿者</li>
+                <li><strong>英语水平</strong>大学英语6级证书（CET-6）</li>
+                <li><strong>计算机证书</strong>大学计算机二级证书（C语言）</li>
             </ul>
             <input type="button" value="+" class="add" />
         </div>
