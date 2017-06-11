@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>starSky</title>
+</head>
+<body>
+
+<canvas id="canvas">
+    该浏览器不支持Canvas，请更换浏览器重试
+</canvas>
+
+<script>
+    var searchLight = {x:400,y:400,r:300,vx:Math.random()*5+10,vy:Math.random()*5+10};
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+
+        canvas.width = 1200;
+        canvas.height = 800;
+
+        var context = canvas.getContext('2d');
+
+        setInterval(
+            function () {
+                draw(context);
+                update(canvas.width,canvas.height);
+            },
+            40
+        );
+
+    };
+
+    function update(w,h) {
+        searchLight.x += searchLight.vx;
+        searchLight.y += searchLight.vy;
+
+        if(searchLight.x-searchLight.r<=0){
+            searchLight.vx = -searchLight.vx;
+            searchLight.x = searchLight.r;
+        }
+
+        if(searchLight.x+searchLight.r>=w){
+            searchLight.vx = -searchLight.vx;
+            searchLight.x = w-searchLight.r;
+        }
+
+        if(searchLight.y-searchLight.r<=0){
+            searchLight.vy = -searchLight.vy;
+            searchLight.y = searchLight.r;
+        }
+
+        if(searchLight.y+searchLight.r>=h){
+            searchLight.vy = -searchLight.vy;
+            searchLight.y = h-searchLight.r;
+        }
+
+    }
+
+    function draw(context) {
+
+        var canvas = context.canvas;
+
+        context.clearRect(0,0,canvas.width,canvas.height);
+
+        context.save();
+
+        context.beginPath();
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width,canvas.height);
+
+        context.beginPath();
+        context.arc(searchLight.x,searchLight.y,searchLight.r,0,Math.PI*2);
+        context.fill();
+        context.clip();
+
+        var skyStyle = context.createRadialGradient(600,800,0,600,800,1200);
+        skyStyle.addColorStop(0.0,'#0000c6');
+        skyStyle.addColorStop(1.0,'black');
+        context.fillStyle = skyStyle;
+        context.fillRect(0,0,canvas.width,canvas.height);
+
+        for(var i=0;i<200;i++){
+            var r = Math.random()*5+5;
+            var x = Math.random()*canvas.width;
+            var y = Math.random()*canvas.height*0.65;
+            var rot = Math.random()*360;
+            drawStar(context,x,y,r,rot);
+
+        }
+
+        fillMoon(context,2,850,200,100,20);
+        drawLand(context);
+
+        context.restore();
+    }
+
+    function drawLand(cxt) {
+
+        cxt.save();
+
+        cxt.beginPath();
+        cxt.moveTo(0,600);
+        cxt.bezierCurveTo(540,400,660,800,1200,600);
+        cxt.lineTo(1200,800);
+        cxt.lineTo(0,800);
+        cxt.closePath();
+
+        var landStyle = cxt.createLinearGradient(0,800,0,0);
+        landStyle.addColorStop(0.0,'#030');
+        landStyle.addColorStop(1.0,'#580');
+        cxt.fillStyle = landStyle;
+
+        cxt.fill();
+
+        cxt.restore();
+
+    }
+
+    function fillMoon(cxt,d,x,y,r,rot,fillColor) {
+        cxt.save();
+        cxt.translate(x,y);
+        cxt.rotate(rot*Math.PI/180);
+        cxt.scale(r,r);
+        pathMoon(cxt,d);
+        cxt.shadowColor = "#fd5";
+        cxt.shadowOffsetX = 5;
+        cxt.shadowOffsetY = 0;
+        cxt.shadowBlur = 5;
+        cxt.fillStyle = fillColor||"#ff5";
+        cxt.fill();
+        cxt.restore();
+    }
+
+    function pathMoon(cxt,d) {
+        cxt.beginPath();
+        cxt.arc(0,0,1,0.5*Math.PI,1.5*Math.PI,true);
+        cxt.moveTo(0,-1);
+        cxt.arcTo(d,0,0,1,dis(0,-1,d,0)/d);
+        cxt.closePath();
+
+    }
+
+    function dis(x1,y1,x2,y2) {
+        return Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+    }
+
+    function drawStar(cxt,x,y,R,rot) {
+        cxt.save();
+
+        cxt.translate(x,y);
+        cxt.rotate(rot/180*Math.PI);
+
+        starPath(cxt,R);
+
+        cxt.globalAlpha = 0.8;
+
+        cxt.fillStyle = "#fb3";
+        //cxt.strokeStyle = "#fb3";
+        //cxt.lineWidth = 3;
+        //cxt.lineJoin = "round";
+
+        cxt.fill();
+        cxt.stroke();
+
+
+        cxt.restore();
+
+    }
+
+    function starPath(cxt,r) {        //标准五角星
+        cxt.beginPath();
+        for(var i=0;i<5;i++){
+            cxt.lineTo(Math.cos((18+i*72)/180*Math.PI)*r,-Math.sin((18+i*72)/180*Math.PI)*r);
+            cxt.lineTo(Math.cos((54+i*72)/180*Math.PI)*0.5*r,-Math.sin((54+i*72)/180*Math.PI)*0.5*r);
+        }
+        cxt.closePath();
+    }
+
+
+</script>
+
+</body>
+</html>
