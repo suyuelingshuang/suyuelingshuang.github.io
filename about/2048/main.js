@@ -77,6 +77,7 @@ function init() {
 
 function updateBoardView() {
     $(".number-cell").remove();
+    var scale = 1.0;
 
     for(var i=0;i<4;i++){
         for(var j=0;j<4;j++){
@@ -96,15 +97,19 @@ function updateBoardView() {
                 theNumberCell.css('background-color',getNumBackColor(board[i][j]));
                 theNumberCell.css('color',getNumColor(board[i][j]));
                 theNumberCell.text(board[i][j]);
+                scale = getNumFontSize(board[i][j]);
             }
+
+            theNumberCell.css('line-height',cellSideLength+'px');
+            theNumberCell.css('font-size',0.6*scale*cellSideLength+'px');
 
             hasConflicted[i][j] = false;
 
         }
     }
 
-    $('.number-cell').css('line-height',cellSideLength+'px');
-    $('.number-cell').css('font-size',0.6*cellSideLength+'px');
+    /*$('.number-cell').css('line-height',cellSideLength+'px');
+    $('.number-cell').css('font-size',0.6*cellSideLength+'px');*/
 }
 
 function generateOneNumber() {
@@ -245,6 +250,9 @@ function isGameOver() {
 function gameOver() {
     alert("game over");
 }
+function win() {
+    alert('Congratulations!You are win!');
+}
 
 function moveLeft() {
     if(!canMoveLeft(board)){
@@ -271,6 +279,11 @@ function moveLeft() {
                         //add score
                         score += board[i][k];
                         updateScore(score);
+                        if(board[i][k] >= 2048){
+                            setTimeout("generateOneNumber()",210);
+                            setTimeout('win()',300);
+                            break;
+                        }
 
                         hasConflicted[i][k] = true;
                         continue;
@@ -309,7 +322,11 @@ function moveRight() {
                         board[i][j] = 0;
                         score += board[i][k];
                         updateScore(score);
-
+                        if(board[i][k] >= 2048){
+                            setTimeout("generateOneNumber()",210);
+                            setTimeout('win()',300);
+                            break;
+                        }
                         hasConflicted[i][k] = true;
                         continue;
                     }
@@ -347,6 +364,11 @@ function moveUp() {
                         board[i][j] = 0;
                         score += board[k][j];
                         updateScore(score);
+                        if(board[k][j] >= 2048){
+                            setTimeout("generateOneNumber()",210);
+                            setTimeout('win()',300);
+                            break;
+                        }
 
                         hasConflicted[k][j] = true;
                         continue;
@@ -385,6 +407,11 @@ function moveDown() {
                         board[i][j] = 0;
                         score += board[k][j];
                         updateScore(score);
+                        if(board[k][j] >= 2048){
+                            setTimeout("generateOneNumber()",210);
+                            setTimeout('win()',300);
+                            break;
+                        }
 
                         hasConflicted[k][j] = true;
                         continue;
@@ -398,6 +425,3 @@ function moveDown() {
 
     return true;
 }
-
-
-
