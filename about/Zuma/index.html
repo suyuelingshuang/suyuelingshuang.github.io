@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>祖玛小游戏</title>
+    <style>
+        body,div{margin:0 auto;padding:0;}
+        body{background: #ccc;}
+        #div1{background: white;width: 600px;margin: 20px auto;}
+    </style>
+
+    <script>
+        window.onload = function () {
+            var start = new Date();
+            var startTime = start.getTime();
+
+            var oC1 = document.getElementById('c1');
+            var oContext = oC1.getContext('2d');
+
+            var i=0;
+
+            var yImg = new Image();
+            yImg.src = 'person.png';
+
+            yImg.onload = function () {
+
+                setInterval(function () {
+
+                    oContext.clearRect(0,0,oC1.width,oC1.height);
+
+                    oContext.beginPath();
+                    oContext.arc(300,200,200,-Math.PI/2,Math.PI,false);
+                    oContext.arc(250,200,150,Math.PI,2*Math.PI,false);
+                    oContext.strokeStyle = "pink";
+                    oContext.lineWidth = 2;
+                    oContext.stroke();
+
+                    oContext.beginPath();
+                    oContext.arc(400,200,20,0,2*Math.PI,false);
+                    oContext.stroke();
+
+                    for(var i=0;i<balls.length;i++){
+                     oContext.beginPath();
+                     oContext.moveTo(balls[i].x,balls[i].y);
+                     oContext.arc(balls[i].x,balls[i].y,20,0,2*Math.PI,false);
+                     oContext.fill();
+                     }
+
+                    oContext.save();
+                    oContext.translate(300,200);
+                    oContext.rotate(iRotate);
+                    oContext.translate(-40,-40);
+                    oContext.drawImage(yImg,0,0);
+                    oContext.restore();
+
+                    for(var i=0;i<bullets.length;i++){
+
+                        oContext.save();
+                        oContext.fillStyle = 'greenyellow';
+                        oContext.beginPath();
+                        oContext.moveTo(bullets[i].x,bullets[i].y);
+                        oContext.arc(bullets[i].x,bullets[i].y,20,0,2*Math.PI,false);
+                        oContext.fill();
+                        oContext.restore();
+                    }
+
+                    oContext.save();
+                    oContext.font = "60px impact";
+                    oContext.textBaseline = 'top';
+                    oContext.fillStyle = "red";
+                    oContext.shadowOffsetX = 5;
+                    oContext.shadowOffsetY = 5;
+                    oContext.shadowColor = 'green';
+                    oContext.shadowBlur = 5;
+
+                    var iNow = new Date();
+                    var nowTime = iNow.getTime();
+                    var stayTime = Math.round((nowTime-startTime)/1000);
+
+                    var w = oContext.measureText('祖玛游戏').width;
+                    var h = 60;
+                    oContext.fillText('祖玛游戏',(oC1.width-w)/2,420);
+
+                    var w = oContext.measureText(stayTime).width;
+                    var h = 40;
+                    oContext.fillText(stayTime,(oC1.width-w)/2,500);
+                    oContext.restore();
+
+                },1000/60);
+
+                setInterval(function () {
+                 for(var i =0;i<balls.length;i++){
+                 balls[i].num++;
+
+                 if(balls[i].num == 270){
+                 balls[i].startX = 250;
+                 balls[i].startY = 50;
+                 balls[i].r = 150;
+                 }
+
+                 if(balls[i].num == 270+180){
+                     alert('游戏结束');
+                     window.location.reload();
+                 }
+
+                 balls[i].x = Math.sin(balls[i].num*Math.PI/180)*balls[i].r+balls[i].startX;
+                 balls[i].y = balls[i].r - Math.cos(balls[i].num*Math.PI/180)*balls[i].r+balls[i].startY;
+                 }
+
+                 for(var i=0;i<bullets.length;i++){
+                     bullets[i].x = bullets[i].x+bullets[i].sX;
+                     bullets[i].y = bullets[i].y+bullets[i].sY;
+                 }
+
+                 for(var i=0;i<bullets.length;i++){
+                     for(var j=0;j<balls.length;j++){
+                         if(pz(bullets[i].x,bullets[i].y,balls[j].x,balls[j].y,20,20)){
+                             bullets.splice(i,1);
+                             balls.splice(j,1);
+                             break;
+                         }
+
+                     }
+                 }
+
+                 },30);
+
+                var balls = [];
+                balls[0] = {
+                    x:300,
+                    y:0,
+                    r:200,
+                    num:0,
+                    startX:300,
+                    startY:0
+                };
+
+                setInterval(function () {
+                 balls.push({
+                 x:300,
+                 y:0,
+                 r:200,
+                 num:0,
+                 startX:300,
+                 startY:0
+                 })
+                 },500);
+
+                var iRotate = 0;
+                oC1.onmousemove = function (ev) {
+                    var ev = ev||event;
+
+                    var x = ev.clientX - oC1.offsetLeft;
+                    var y = ev.clientY - oC1.offsetTop;
+
+                    var a = x-300;
+                    var b = y-200;
+
+                    var c = Math.sqrt(a*a+b*b);
+
+                    if(a>0 && b>0){
+                        iRotate = Math.asin(b/c) + Math.PI/2;
+                    }else if(a>0){
+                        iRotate = Math.asin(a/c);
+                    }else if(a<0 && b>0){
+                        iRotate = -(Math.asin(b/c) + Math.PI/2);
+                    }else if(a<0){
+                        iRotate = Math.asin(a/c);
+                    }
+
+                };
+
+                var bullets = [];
+
+                oC1.onmousedown = function (ev) {
+                    var ev = ev||window.event;
+
+                    var x = ev.clientX - oC1.offsetLeft;
+                    var y = ev.clientY - oC1.offsetTop;
+
+                    var a = x-300;
+                    var b = y-200;
+
+                    var c = Math.sqrt(a*a+b*b);
+
+                    var speed = 5;
+
+                    var sX = speed*a/c;
+                    var sY = speed*b/c;
+
+                    bullets.push({
+                        x:300,
+                        y:200,
+                        sX:sX,
+                        sY:sY
+                    });
+
+                };
+
+            };
+
+            function pz(x1,y1,x2,y2,r1,r2) {
+                var a = x1 - x2;
+                var b = y1 - y2;
+                var flag = false;
+
+                var c = Math.sqrt(a*a+b*b);
+
+                if(c<=r1+r2){
+                    flag = true;
+                }
+                return flag;
+            }
+
+
+
+
+
+
+        };
+    </script>
+</head>
+<body>
+
+<div id="div1">
+    <canvas id="c1" width="600" height="600"></canvas>
+</div>
+
+</body>
+</html>
