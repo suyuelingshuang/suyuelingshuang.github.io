@@ -43,6 +43,15 @@ function getNumColor(num) {
     return "white";
 }
 
+function getNumFontSize(num) {
+    if(num>=1024){
+        return 0.6;
+    }else if(num>=128){
+        return 0.8;
+    }
+    return 1;
+}
+
 function noSpace(board) {
     for(var i=0;i<4;i++){
         for(var j=0;j<4;j++){
