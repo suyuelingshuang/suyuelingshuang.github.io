@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <title>棍子英雄</title>
+    <script>
+        (function () {
+            var html = document.documentElement;
+            var hW = html.getBoundingClientRect().width;
+            html.style.fontSize = hW/16 + 'px';
+            //总宽度/16 = 1rem
+        })();
+    </script>
+    <link rel="stylesheet" href="css/yutu.min.css" />
+</head>
+<body>
+
+<div id="box_wrap">
+    <div id="bird">
+        <div class="bird_box">
+            <img src="img/bird_0_1.png" alt="">
+        </div>
+    </div>
+    <div id="monkey">
+        <div class="monkey_box">
+            <img src="img/walk.png" alt="">
+        </div>
+    </div>
+    <div id="box">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div id="stick"></div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/yutu.min.js"></script>
+</body>
+</html>

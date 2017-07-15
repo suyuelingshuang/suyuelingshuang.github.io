@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <title>真心话大冒险</title>
+    <script>
+        (function () {
+            var html = document.documentElement;
+            var hW = html.getBoundingClientRect().width;
+            html.style.fontSize = hW/16 + 'px';
+            //总宽度/16 = 1rem
+        })();
+    </script>
+    <link rel="stylesheet" href="css/fail.min.css" />
+</head>
+<body>
+<div id="box_wrap">
+    <div id="bird">
+        <div class="bird_box">
+            <img src="img/bird_0_1.png" alt="">
+        </div>
+    </div>
+    <div id="monkey">
+        <div class="monkey_box">
+            <img src="img/walk.png" alt="">
+        </div>
+    </div>
+</div>
+<div id="poker_box">
+    <div class="poker_wrap">
+        <div class="poker">
+            <div class="poker_inner">
+                <h4>真</h4>
+            </div>
+        </div>
+        <div class="poker">
+            <div class="poker_inner">
+                <h4>心</h4>
+            </div>
+        </div>
+        <div class="poker">
+            <div class="poker_inner">
+                <h4>话</h4>
+            </div>
+        </div>
+        <div class="poker">
+            <div class="poker_inner pic1"></div>
+        </div>
+        <div class="poker info">
+            <div class="poker_inner">
+                <h4>点击翻开任意一张</h4>
+            </div>
+        </div>
+        <div class="poker">
+            <div class="poker_inner pic2"></div>
+        </div>
+        <div class="poker">
+            <div class="poker_inner">
+                <h4>大</h4>
+            </div>
+        </div>
+        <div class="poker">
+            <div class="poker_inner">
+                <h4>冒</h4>
+            </div>
+        </div>
+        <div class="poker">
+            <div class="poker_inner">
+                <h4>险</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="btn"><a href="index.html">点我返回</a></div>
+<script src="js/jquery.min.js"></script>
+<script src="js/fail.min.js"></script>
+</body>
+</html>
