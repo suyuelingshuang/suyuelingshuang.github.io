@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas系列</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/canvas.css" />
+</head>
+<body>
+<!--Header-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#myCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img class="my-logo" src="img/logo.png" alt="myLogo" /></a>
+
+        </div>
+
+        <div id="myCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="jQueryProject.html">jQuery系列</a></li>
+                <li class="active"><a href="#">Canvas系列</a></li>
+                <li class=""><a href="photoAlbum.html">CSS3系列</a></li>
+                <li class=""><a href="index.html">个人简历</a></li>
+                <li class="dropdown myDropDownStyle">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="100du">整站开发系列</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="https://github.com/suyuelingshuang">GitHub</a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="https://suyuelingshuang.github.io/">Blog</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!--End Header-->
+
+<!-- Begin #carousel-section -->
+<section id="carousel-section" class="section-global-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="carousel-1" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators visible-lg">
+                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <!-- Begin Slide 1 -->
+                    <div class="item active">
+                        <img src="img/slider/canvas_slide_0_0.jpg" height="400" alt="Image of first carousel">
+                        <div class="carousel-caption">
+                            <h3 class="carousel-title hidden-xs">Beautiful Clock</h3>
+                            <p class="carousel-body">Count time and scatter small balls</p>
+                        </div>
+                    </div>
+                    <!-- End Slide 1 -->
+
+                    <!-- Begin Slide 2 -->
+                    <div class="item">
+                        <img src="img/slider/canvas_slide_1_0.jpg" height="400" alt="Image of second carousel">
+                        <div class="carousel-caption">
+                            <h3 class="carousel-title hidden-xs">Mr Zuma game and write words</h3>
+                            <p class="carousel-body">study by playing</p>
+                        </div>
+                    </div>
+                    <!-- End Slide 2 -->
+
+                    <!-- Begin Slide 3 -->
+                    <div class="item">
+                        <img src="img/slider/canvas_slide_2_0.jpg" height="400" alt="Image of third carousel">
+                        <div class="carousel-caption">
+                            <h3 class="carousel-title hidden-xs">Star Sky</h3>
+                            <p class="carousel-body">Looking at the stars</p>
+                        </div>
+                    </div>
+                    <!-- End Slide 3 -->
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-1" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-1" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End #carousel-section -->
+
+<!-- Begin #content-section -->
+<section id="content" class="content-section section-global-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="content-header">
+                <h3 class="content-header-title">Canvas系列</h3>
+                <p class="content-header-body hidden-lg"><em> Canvas、CSS3、jQuery、JavaScript、DOM操作 </em>  </p>
+                <div class="hidden-lg">
+                    <h4>项目链接地址：</h4>
+                    <a href="writeWord" data-role="button" class="btn btn-success">写字</a>
+                    <a href="Zuma" data-role="button" class="btn btn-success">祖玛游戏</a>
+                    <a href="countTime" data-role="button" class="btn btn-success">绚丽时钟</a>
+                    <a href="starSky" data-role="button" class="btn btn-success">璀璨星空</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-2 sidebar visible-lg">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>主题</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <li>Canvas</li>
+                            <li>CSS3</li>
+                            <li>jQuery</li>
+                            <li>JavaScript</li>
+                            <li>DOM操作</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>项目链接</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <li><a href="Zuma">祖玛游戏</a></li>
+                            <li><a href="countTime">绚丽时钟</a></li>
+                            <li><a href="writeWord">米字格写字</a></li>
+                            <li><a href="starSky">璀璨星空</a></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>主页介绍</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            本主页主体部分主要是采用Bootstrap实现响应式布局，以适配各种移动终端；并采用了CSS3动画实现了简单的图片轮播效果，整个页面并未使用js及DOM操作技术。
+                        </p>
+                        <p>
+                            图片轮播部分展示的是该板块作品的部分效果图。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="main" class="col-lg-10">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#a">写字</a></li>
+                    <li><a data-toggle="tab" href="#b">祖玛游戏</a></li>
+                    <li><a data-toggle="tab" href="#c">绚丽时钟</a></li>
+                    <li><a data-toggle="tab" href="#d">璀璨星空</a></li>
+                </ul>
+                <ul class="tab-content">
+                    <li id="a" class="tab-pane active">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>实现功能</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="alert alert-success">使用Canvas绘制米字格，使用jQuery实现PC端根据鼠标移动、移动端根据手指触控在绘图区域绘制图形汉字的功能，
+                                                提供了不同字体颜色选择的功能，并实现了根据移动速度调整笔画粗细的功能，很好地实现了适配多种设备的具备触控写字功能的WebApp</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>技术细节</h4>
+                                            <em>Canvas、jQuery</em>
+                                        </div>
+                                        <div class="panel-body">
+                                            <input type="button" value="难点" class="btn btn-danger" />
+                                            <input type="button" value="待优化" class="btn btn-warning" />
+                                            <hr />
+                                            <div class="alert alert-info">获取当前设备的屏幕宽度，当小于一定值时将绘制画布边长设置为当前屏幕宽度，否则以该值为画布边长</div>
+                                            <div class="alert alert-info">由于移动端与PC端所触发的事件不同，因此将开始绘制、绘制中和绘制结束分别分装在不同函数中方便复用，由于绘制过程是基于鼠标处于按下状态或手指处于触碰屏幕状态，因此需要创建变量记录该状态，在绘制开始时设置为true，绘制结束时设置为false</div>
+                                            <div class="alert alert-info">由于绘制是在画布中，所获取的鼠标点击坐标和触控坐标均是相对可视区的，因此在运用点击和触控坐标时需要先将坐标转换为相对画布的坐标</div>
+                                            <div class="alert alert-info">为了模拟真实的写毛笔字的状态，该项目中封装了一个根据鼠标或触控移动速度改变笔画粗细的函数</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li id="b" class="tab-pane">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>实现功能</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="alert alert-success">简易版祖玛游戏，青蛙朝着鼠标点击的位置发射小球，射击沿着曲线运动的小球，当小球碰撞时两者均消失，当有小球运动到曲线终点位置时游戏结束，以游戏时间作为游戏成绩</div>
+                                            <div class="alert alert-success">每隔一段时间从曲线的起始位置生成一个小球，小球沿着曲线按一定速度朝着另一端运动；画布的中间位置有一张青蛙图像，当鼠标位于画布上某一点时，该青蛙的嘴巴就朝向该方向</div>
+                                            <div class="alert alert-success">当鼠标在画布某一位置按下时，青蛙就像该方向发射一个小球，当该小球与曲线上运动的小球发生碰撞时两个小球同时消失</div>
+                                            <div class="alert alert-success">从加载页面开始计时，将计时绘制到画布下方作为成绩，当有小球运动到曲线终点位置时游戏结束，弹出“游戏结束”提示框，点击确定重新加载该页面</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>技术细节</h4>
+                                            <em> Canvas、CSS3、jQuery、JavaScript、DOM操作 </em>
+                                        </div>
+                                        <div class="panel-body">
+                                            <input type="button" value="难点" class="btn btn-danger" />
+                                            <input type="button"  value="待优化" class="btn btn-warning" />
+                                            <hr />
+                                            <div class="alert alert-info">所有的绘制过程都放在青蛙图像加载完成后进行，为了呈现出动画效果使用setInterval每隔一段清空一次整个画布，并重新绘制图像 </div>
+                                            <div class="alert alert-info">绘制完曲线路径后需要重新beginPath，然后绘制曲线终点处的小圆，如果不重新beginPath会导致曲线终点会与终点处小圆路径开始的地方相连，使得小圆中多出一条短线 </div>
+                                            <div class="alert alert-danger">由于绘制小球数量在实时更新，且每个小球只有坐标点及围绕运动的曲线半径不一样，因此创建了一个数组用于存放每个小球对象，每个小球对象均有startX、startY、r和num四个属性值，用来存放其运动的曲线的圆心和半径及运动时间，其中num是从开始位置开始自加1的数字，用来计算小球运动的角度。然后运用数学公式根据这些值计算出每次更新时小球的坐标点，将计算结果存入小球对象的x、y属性值中 </div>
+                                            <div class="alert alert-danger">由于碰撞检测部分可以复用，故封装到一个函数中，检测原理是循环判断发射出的小球与运动的小球距离是否小于等于两者半径之和，如果是则表明碰撞成功，将两个小球分别从各自的数组中删除，跳出循环判断 </div>
+                                            <div class="alert alert-warning">可以添加边缘检测，当由青蛙发射的小球到达画布边缘时就将该小球信息从数组中删除，可以使碰撞检测时的遍历时间复杂度降低，实现优化 </div>
+                                            <div class="alert alert-warning">可以添加移动端触控事件，并对移动端实现适配 </div>
+                                            <div class="alert alert-warning">可以随机生成小球的颜色，或者将运动小球替换成水果或小动物的图像，以获得更好的用户体验 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="c" class="tab-pane">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>实现功能</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="alert alert-success">以圆形色块平铺显示当前时间并实时更新，该画布及画布内容大小能适配各种PC端及移动端设备的屏幕大小</div>
+                                            <div class="alert alert-success">当数字改变时呈现出原来位置处的圆形色块以小球形式以一定速度向各个方向弹跳出来的效果，弹跳时垂直方向有一定加速度</div>
+                                            <div class="alert alert-success">当小球落到画布低部边缘处时发生反弹，反弹后速度按一定比例损失，模拟摩擦系数造成的速度损失</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>技术细节</h4>
+                                            <em>Canvas、JavaScript</em>
+                                        </div>
+                                        <div class="panel-body">
+                                            <input type="button" value="难点" class="btn btn-danger" />
+                                            <input type="button" value="待优化" class="btn btn-warning" />
+                                            <hr />
+                                            <div class="alert alert-info">将0~9数字信息及冒号以二维数组形式存储在一个digit数组中，0为空白，1为有小球，将喜欢的颜色的字符串信息存储在一个数组中，便于实现随机改变小球颜色功能</div>
+                                            <div class="alert alert-info">封装添加小球的函数，该函数接收三个参数，需要更新的数字距离画布左边和上边的距离值及所要表示的数字，该函数根据所要表示的数字在digit数组中遍历表示该数组的元素，得到该处需要显示的小球信息，并将小球以对象的形式存入一个数组中</div>
+                                            <div class="alert alert-info">封装更新当前画布上小球信息的函数，该函数实现碰撞检测、边缘检测，及时删除不在画布上的小球删除有利于降低遍历过程的时间复杂度</div>
+                                            <div class="alert alert-info">封装绘制当前画布中小球的函数，每次绘制都需要清空当前画布信息，重新获取当前时间，根据当前时间更新需要显示的数字信息，重新绘制</div>
+                                            <div class="alert alert-info">检测每个位置处数字是否发生改变，若是则生成一组带有不同颜色的小球，并且给各个小球随机的速度，将小球信息存入数组</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li id="d" class="tab-pane">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>实现功能</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="alert alert-success">绘制带有渐进色的蓝天、带阴影的弯月、大小角度位置动态变化的五角星和有坡度的草原</div>
+                                            <div class="alert alert-success">绘制动态探照灯效果的画布，对前一个绘制的画布进行遮罩，只有探照灯以内的区域可以看到前一个的画布内容，其余部分为黑色</div>
+                                            <div class="alert alert-success">探照灯呈现匀速直线运动，在画布边缘位置发生碰撞反弹</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>技术细节</h4>
+                                            <em> Canvas、JavaScript </em>
+                                        </div>
+                                        <div class="panel-body">
+                                            <input type="button" value="难点" class="btn btn-danger" />
+                                            <input type="button"  value="待优化" class="btn btn-warning" />
+                                            <hr />
+                                            <div class="alert alert-info">将描绘标准五角星路径、月亮路径分别用函数封装，方便复用，将五角星、月亮、草原的绘制过程分别用函数封装，将绘制环境以传参（cxt）形式传入每个函数，在每个绘制函数的开始时执行cxt.save();保存当前绘制环境，绘制函数结束时执行cxt.restore();恢复之前的绘制环境，避免改变之前的绘制环境</div>
+                                            <div class="alert alert-info">在绘制月亮前运用勾股定理计算内外两层圆弧的圆心位置，在绘制五角星前计算了五角星各点位置</div>
+                                            <div class="alert alert-info">碰撞检测，将探照灯速度分解到水平方向和垂直方向，当与左右两边碰撞则将水平方向速度反向，当与上下两边碰撞则将垂直方向速度反向</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <br />
+                <br />
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- End #content-section -->
+
+</body>
+</html>

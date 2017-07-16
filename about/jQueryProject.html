@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery系列</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/canvas.css" />
+</head>
+<body>
+<!--Header-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#myCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img class="my-logo" src="img/logo.png" alt="myLogo" /></a>
+
+        </div>
+
+        <div id="myCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="active"><a href="#">jQuery系列</a></li>
+                <li><a href="CanvasProject.html">Canvas系列</a></li>
+                <li class=""><a href="photoAlbum.html">CSS3系列</a></li>
+                <li class=""><a href="index.html">个人简历</a></li>
+                <li class="dropdown myDropDownStyle">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="100du">整站开发系列</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="https://github.com/suyuelingshuang">GitHub</a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="https://suyuelingshuang.github.io/">Blog</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!--End Header-->
+
+<!-- Begin #carousel-section -->
+<section id="carousel-section" class="section-global-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="carousel-1" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators visible-lg">
+                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                    <li data-target="#carousel-1" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <!-- Begin Slide 1 -->
+                    <div class="item active">
+                        <img src="img/slider/jquery_slide_0_0.jpg" height="400" alt="Image of first carousel">
+                        <div class="carousel-caption">
+                            <h3 class="carousel-title hidden-xs">2048</h3>
+                            <p class="carousel-body">Honey Game/It can be adapted to mobile games</p>
+                        </div>
+                    </div>
+                    <!-- End Slide 1 -->
+
+                    <!-- Begin Slide 2 -->
+                    <div class="item">
+                        <img src="img/slider/jquery_slide_1_0.jpg" height="400" alt="Image of second carousel">
+                        <div class="carousel-caption">
+                            <h3 class="carousel-title hidden-xs">Stick Hero</h3>
+                            <p class="carousel-body">Honey Game/jQuery and Less</p>
+                        </div>
+                    </div>
+                    <!-- End Slide 2 -->
+
+                    <!-- Begin Slide 3 -->
+                    <div class="item">
+                        <img src="img/slider/jquery_slide_2_0.jpg" height="400" alt="Image of third carousel">
+                        <div class="carousel-caption">
+                            <h3 class="carousel-title hidden-xs">The flowers of war</h3>
+                            <p class="carousel-body">Honey Game/Line drinker's wager game</p>
+                        </div>
+                    </div>
+                    <!-- End Slide 3 -->
+
+                    <!-- Begin Slide 4 -->
+                    <div class="item">
+                        <img src="img/slider/jquery_slide_3_0.jpg" height="400" alt="Image of fourth carousel">
+                        <div class="carousel-caption">
+                            <h3 class="carousel-title hidden-xs">Truth or Dare</h3>
+                            <p class="carousel-body">Honey Game/jQuery and Less</p>
+                        </div>
+                    </div>
+                    <!-- End Slide 4 -->
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-1" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-1" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End #carousel-section -->
+
+<!-- Begin #content-section -->
+<section id="content" class="content-section section-global-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="content-header">
+                <h3 class="content-header-title">Canvas系列</h3>
+                <p class="content-header-body hidden-lg"><em> Canvas、CSS3、jQuery、JavaScript、DOM操作 </em>  </p>
+                <div class="hidden-lg">
+                    <h4>项目链接地址：</h4>
+                    <a href="myWebApp" data-role="button" class="btn btn-success">行酒令 <em class="hidden-xs">（棍子英雄+真心话大冒险+金陵十三钗）</em></a>
+                    <a href="2048" data-role="button" class="btn btn-success">2048</a>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-2 sidebar visible-lg">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>主题</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <li>jQuery</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>DOM操作</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>项目链接</h4>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <li><a href="myWebApp">行酒令（棍子英雄+真心话大冒险+金陵十三钗）</a></li>
+                            <li><a href="2048">2048</a></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4>主页介绍</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            本主页主体部分主要是采用Bootstrap实现响应式布局，以适配各种移动终端；并采用了CSS3动画实现了简单的图片轮播效果，整个页面并未使用js及DOM操作技术。
+                        </p>
+                        <p>
+                            图片轮播部分展示的是该板块作品的部分效果图。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="main" class="col-lg-10">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#a" data-toggle="tab">行酒令 <em class="hidden-xs">（棍子英雄+真心话大冒险+金陵十三钗）</em></a></li>
+                    <li><a href="#b" data-toggle="tab">2048</a></li>
+                </ul>
+                <ul class="tab-content">
+                    <li id="a" class="tab-pane active">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>实现功能</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="alert alert-success">模拟实现“棍子英雄”、“金陵十三钗”及“真心话大冒险”小游戏，该游戏能适配各种移动设备,可以作为酒桌上的行酒令。</div>
+                                            <div class="alert alert-success">“棍子英雄”：孙悟空站在木桩上通过将金箍棒变长并让其倒下搁在下一个木桩上，然后通过金箍棒到达下一个木桩，木桩的宽度和距离是在一定范围内随机变化的。我们通过长按屏幕使金箍棒变长，结束长按动作金箍棒停止变长并倒下，如果金箍棒顶端落在第二个木桩上则游戏成功，大雁和孙悟空一同前行，进入“金陵十三钗”游戏环节，否则游戏失败，大雁迅速飞到金箍棒的顶端准备接住孙悟空，进入“真心话大冒险”游戏环节。</div>
+                                            <div class="alert alert-success">“金陵十三钗”：将牌号及对应的游戏规则放在4*4格子的外围，通过在屏幕上滑动手指来循环滚动选择将进行的游戏，循环滚动的个数由滑动的速度决定，滑动速度越快滚动个数越多，为了避免误判断设置了最小的触屏时间。</div>
+                                            <div class="alert alert-success">“真心话大冒险”：九宫格背后存放着九个游戏规则，当点击选择其中任何一个时将翻看到背后的游戏规则并将其放大到整个九宫格上，旋转360度后其自动退回到其原来的位置，并将其他九宫格背后的游戏规则显示出来，点击刚才选中的那个将重新进行该游戏。</div>
+                                            <div class="alert alert-warning">注：点击“金陵十三钗”和“真心话大冒险”游戏上的“点我返回”将重新进入“棍子英雄”游戏环节。该游戏可以作为酒桌上的行酒令，其中“金陵十三钗”游戏借鉴于一种扑克牌行酒令游戏，是使用扑克牌（散牌也行）玩的，从A到K，不分花色，分别代表一种小玩法，13种牌13类小游戏，故名金陵十三钗。</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>技术细节</h4>
+                                            <em> jQuery、CSS3、JavaScript、DOM操作 </em>
+                                        </div>
+                                        <div class="panel-body">
+                                            <input type="button" value="难点" class="btn btn-danger" />
+                                            <input type="button"  value="待优化" class="btn btn-warning" />
+                                            <hr />
+                                            <div class="alert alert-danger">“棍子英雄”：大雁飞向金箍棒顶端时是先等距离向下向左移动，当上下或者左右位置满足时停止同时运动进入单一方向运动，此处是用setTimeout和arguments.callee实现大雁的运动，左右运动和上下运动分别是通过改变放置大雁的盒子的left值和盒子包裹层的top值实现的，其中盒子包裹层设置position:relative;盒子设置position:absolute;。由于setTimeout的函数中的返回值外层无法访问，而单一方向运动必须根据同时运动后的位置信息来进行，因此我将同时运动的setTimeout放在一个togetherMove函数中，并将departMove作为参数传入togetherMove函数，当不满足递归条件时，内部setTimeout中的函数将参数传入departMove并执行该回调函数。</div>
+                                            <div class="alert alert-danger">“金陵十三钗”：为了同时实现PC端和移动端事件，将事件处理函数分别封装在startTouch、moveTouch、endTouch函数中，由于移动的事件是发生在鼠标按下时，因此添加了一个isMouseDown的flag来标记当前触屏状态。由于moveTouch事件是隔断时间就会触发一次，在该函数中计算得到的速度是个快速变化的值，该项目中使用的是整个从触碰开始到结束过程中的平均速度，因此创建了一个全局变量用于存放速度数据，在触碰结束时计算平均速度并根据平均速度来决定循环滚动的个数。 </div>
+                                            <div class="alert alert-info">“真心话大冒险”：由于游戏规则的字数不一定而存放该内容的盒子大小是一定的，因此事先将所有的游戏规则的内容、字号、行高作为一个整体对象存放在一个数字中，并创建一个用于存储生成9个随机索引值数的数组，当点击其中任意一个时将该数组的值作为存放对象的数组的索引，并将对象内容存放在九宫格对应位置上，生成对应位置的内容。</div>
+                                            <div class="alert alert-warning">由于“金陵十三钗”是扑克牌类游戏，在一轮游戏中每张牌出现的次数是有限的，由于总共4种花色，每种花色13张牌，因此可以建4个数组代表4种花色，每个数组中存放13张牌，每次游戏时先随机选择一种花色，然后再随机选择一张牌，返回后将该元素信息从对应的数组中slice出去，当4个数组都为空时提示一轮游戏结束。由于时间原因该部分并未按照该思路完善，后续将继续改善。</div>
+                                            <div class="alert alert-warning">在真实的真心话大冒险游戏中游戏规则远远不止9种，并且有的游戏规则并不是所有人群都适用（比如说成年人和小朋友玩的游戏规则肯定不同），我们可以创建一个更大的数组用于存放更多的游戏规则，并且可以创建不同的数组用于存放不同类型的规则，让用户选择规则类型，这样可以实现跟好的用户体验。 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="b" class="tab-pane">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>实现功能</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="alert alert-success">使用jQuery模拟实现2048游戏，可在PC端使用，并利用百分比使其可适配不同移动端设备</div>
+                                            <div class="alert alert-success">在PC端可按上、下、左、右四个键设置数字移动方向，在移动端根据手指移动方向来设置数字移动方向，每次移动后在空格子中随机生成2或者4</div>
+                                            <div class="alert alert-success">碰撞检测，当数字滑动方向有空的位置且该空位置与该数字之间没有其他数字遮挡，则数字移至该位置，当数字与移动方向相邻位置数字相同时，将该数字清除，并将其相邻位置的数字乘以2，用当前成绩加上得到的数字</div>
+                                            <div class="alert alert-success">当棋盘格中没有空格子且没有数字方块可以移动时游戏失败，当格子中出现2048时游戏成功，游戏结束</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-12">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h4>技术细节</h4>
+                                            <em> jQuery、CSS3、JavaScript、DOM操作 </em>
+                                        </div>
+                                        <div class="panel-body">
+                                            <input type="button" value="难点" class="btn btn-danger" />
+                                            <input type="button"  value="待优化" class="btn btn-warning" />
+                                            <hr />
+                                            <div class="alert alert-info">为适配不同移动端设备，先获取当前设备屏幕宽度，将棋盘格中各元素的宽高及margin、padding值均设置为屏幕宽度的一个比例值</div>
+                                            <div class="alert alert-info">为避免将不小心点击屏幕识别成手指移动应设置最小阈值，当移动距离大于该阈值时才移动数字</div>
+                                            <div class="alert alert-info">由于数字的位数是在变化的，因此数字字体大小应根据数字的位数变化，在该项目中封装一个函数，当数字大于等于128时返回0.8，当数字大于等于1024时返回0.6，否则返回1，更新棋盘格中数字时用返回值乘以起初计算好的值，设置字体大小</div>
+                                            <div class="alert alert-danger">为了优化碰撞检测过程，选择从移动方向的最边缘处位置开始检测。
+                                                为了避免连续碰撞，事先创建了一个二维数组记录棋盘格中每个格子的碰撞状态，默认值均为false，当某个格子发生碰撞时将该处值设置为true，
+                                                只有当碰撞状态为true时才能接着碰撞检测，在更新棋盘格中数字时再将所有格子的碰撞状态设置为false</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <br />
+                <br />
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- End #content-section -->
+
+</body>
+</html>

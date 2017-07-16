@@ -1,148 +1,338 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no,email=no" />
     <title>RESUME</title>
-    <link rel="stylesheet" href="css/resume.css" />
-    <script src="js/basicJs.js"></script>
-    <script src="js/main.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!--使ie8支持html5、媒体-->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        body{margin: 20px 0;}
+        a,input,button{
+            -webkit-tap-hightlight-color:rgba(0,0,0,0);
+        }
+        a,input,button{
+            -webkit-appearance:none;
+            border-radius:0;
+        }
+        a{text-decoration: none;}
+
+        .table{margin: 0;}
+        .sidebar img{width: 200px;height: auto;}
+        .basic-info h4{display: inline;}
+        .basic .panel-body{padding-top:0;}
+
+        .main h4{display: inline;}
+        .edu .panel-body,.work .panel-body,.train .panel-body{padding: 0;}
+        .tab-content{border: 1px solid #ddd;border-top:none;padding: 10px 0 0 0;border-radius: 0 0 5px 5px;}
+    </style>
 </head>
 <body>
-<div id="resume" class="clear">
-    <div id="side">
-        <h1>RESUME</h1>
-        <div class="photoFrame">
-            <img src="img/zwx.gif" alt="photo" />
-        </div>
-        <h2>钟稳霞</h2>
-        <p>Web前端开发相关工作</p>
-        <div class="base">
-            <div class="banner">
-                基本信息
+
+<div class="container">
+    <div class="row">
+
+        <!--sidebar-->
+        <div class="col-lg-4 col-md-4 sidebar">
+            <img src="img/zwx.gif" alt="" class="img-thumbnail center-block" />
+            <h3 class="text-center">姓名：钟稳霞</h3>
+            <h4 class="text-center">求职意向：前端开发工程师</h4>
+            <div class="container-fluid basic-info">
+                <!--基本信息-->
+                <div class="panel panel-primary basic">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-list"></span> <h4>基本信息</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table basic">
+                            <tr>
+                                <td><span class="glyphicon glyphicon-earphone"></span> 电话：</td>
+                                <td><a href="tel:15229239276">15229239276</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-envelope"></span> 邮箱：</td>
+                                <td><a href="mailto:892102951@qq.com">892102951@qq.com</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-home"></span> 籍贯：</td>
+                                <td>湖北黄冈</td>
+                            </tr>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-stats"></span> 住址：</td>
+                                <td>陕西西安</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!--专业技能-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-wrench"></span> <h4>专业技能</h4>
+                    </div>
+                    <div class="panel-body">
+                        <h5>HTML5+CSS3+JavaScript</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                <span class="sr-only">80% Complete (success)</span>
+                            </div>
+                        </div>
+                        <h5>Bootstrap、jQuery</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                <span class="sr-only">70% Complete (warning)</span>
+                            </div>
+                        </div>
+                        <h5>java</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span class="sr-only">40% Complete (danger)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul>
-                <li><strong>电话： </strong>15229239276</li>
-                <li><strong>籍贯： </strong>湖北省黄冈市</li>
-                <li><strong>出生日期： </strong>1991.11.01</li>
-                <li><strong>邮箱： </strong>892102951@qq.com</li>
-                <li><strong>地址： </strong>陕西省西安市</li>
-            </ul>
         </div>
-        <div class="skill">
-            <div class="banner">
-                专业技能
+        <!--End sidebar-->
+
+        <!--main-->
+        <div class="col-lg-8 col-md-8 main">
+            <!--教育经历-->
+            <div class="panel panel-primary edu">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-book"></span> <h4>教育经历</h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr class="success">
+                            <td>2015.9 - 2018.7</td>
+                            <td>西安电子科技大学</td>
+                            <td>电子与通信工程</td>
+                            <td>硕士</td>
+                        </tr>
+                        <tr class="info">
+                            <td>2011.9 - 2015.7</td>
+                            <td>青岛理工大学</td>
+                            <td>通信工程</td>
+                            <td>本科</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <ul>
-                <li>
-                    <strong>HTML5、CSS3、JavaScript</strong>
-                    <div class="range">
-                        <div class="slid"></div>
-                        <div class="sphere"></div>
-                    </div>
-                </li>
-                <li>
-                    <strong>jQuery、Java</strong>
-                    <div class="range">
-                        <div class="slid"></div>
-                        <div class="sphere"></div>
-                    </div>
-                </li>
-                <li>
-                    <strong>JSON、Ajax、XML、Bootstrap</strong>
-                    <div class="range">
-                        <div class="slid"></div>
-                        <div class="sphere"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="main">
-        <div class="edu">
-            <img src="img/education.png" alt="edu" />
-            <h2>教育经历</h2>
-            <hr />
-            <ul>
-                <li><strong>西安电子科技大学</strong></li>
-                <li>电子与通信工程</li>
-                <li>硕士研究生</li>
-                <li>2015.9 - 2018.7</li>
-            </ul>
-            <input type="button" value="+" class="add"/>
-        </div>
-        <div class="item">
-            <img src="img/job.png" alt="item" />
-            <h2>项目经验</h2>
-            <hr />
-            <ol>
-                <li>
-                    <a href="100du">商务网站开发：运用HTML+CSS实现页面布局，JavaScript实现基本功能。</a>
-                    <dl>
-                        <dt>项目描述：</dt>
-                        <dd>HTML页面整体布局，CSS实现表现样式，JS添加页面效果；</dd>
-                        <dd>实现页面图片放大镜效果，层级菜单，二级联动；</dd>
-                        <dd>能够使用定时器实现图片轮播、滚动新闻等功能；</dd>
-                    </dl>
-                </li>
-                <li>
-                    <a href="Wedding">乐队宣传主页：运用JavaScript DOM实现响应式布局。</a>
-                    <dl>
-                        <dt>项目描述：</dt>
-                        <dd>HTML页面整体布局，CSS实现表现样式，JS添加页面效果；</dd>
-                        <dd>使用DOM脚本设置样式，配合JS为页面添加动态效果；</dd>
-                        <dd>使用Ajax模拟实现表单提交、页面交互过程；</dd>
-                    </dl>
-                </li>
-            </ol>
-            <input type="button" value="+" class="add" />
-        </div>
-        <div class="job">
-            <img src="img/job.png" alt="job" />
-            <h2>工作经验</h2>
-            <hr />
-            <ol>
-                <li>
-                    <ul class="title">
-                        <li class="left">2015.7-2015.8</li><li>湖北创锐精密轴承有限公司</li><li class="right">前端开发实习生</li>
+
+            <!--项目经验-->
+            <div class="panel panel-primary items">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-tasks"></span> <h4>项目经验</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#a">jQuery系列</a></li>
+                        <li><a data-toggle="tab" href="#b">Canvas系列</a></li>
+                        <li><a data-toggle="tab" href="#c">CSS3系列</a></li>
+                        <li><a data-toggle="tab" href="#d">整站开发</a></li>
                     </ul>
-                    <dl>
-                        <dt><a href="">工作收获：</a></dt>
-                        <dd>学会了运用HTML+CSS实现页面布局，JavaScript实现基本功能；</dd>
-                        <dd>组织过课程培训，使我的人际交往能力、组织能力、信息搜索能力有很大的提升；</dd>
-                    </dl>
-                </li>
-                <li>
-                    <ul class="title">
-                        <li class="left">2015.9至今</li><li>西安电子科技大学研究生会</li><li class="right">主席助理、体育部副部长、外联部干事</li>
+                    <ul class="tab-content">
+                        <li id="a" class="tab-pane active">
+                            <table class="table">
+                                <tr class="danger">
+                                    <td>行酒令<br/><em class="hidden-xs">（棍子英雄+金陵十三钗+真心话大冒险）</em></td>
+                                    <td colspan="2"><a class="btn btn-success" href="myWebApp">点击查看项目 <br />（请在移动端或使用Chrome浏览器的移动设备模拟工具查看）</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>实现功能：</strong>利用 <strong>jQuery</strong>模拟实现“棍子英雄”、“金陵十三钗”及“真心话大冒险”小游戏，利用 <strong>Less</strong>使该游戏能适配各种移动设备，可以作为酒桌上的行酒令。利用 <strong>Webstorm+YUI Comprossor</strong>实现代码压缩。</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目描述：</strong> <p>“棍子英雄”：利用<strong>闭包</strong>、<strong>递归调用</strong>及 <strong>回调函数</strong>等实现了大雁从某一处移动到指定位置，使用函数封装增强代码的复用性，实现PC端和移动端的事件</p>
+                                        <p>“金陵十三钗”：利用touchmove及mousemove的隔段时间触发一次的特点获取每次细小间距的移动速度，将速度存放在数组中，在触摸结束时计算平均速度，并根据该速度来循环滚动选择游戏规则的个数</p>
+                                        <p>“真心话大冒险”：利用 <strong>面向对象编程思想</strong>，使不同字数的内容能很好的存储在相同体积的容器内。利用<strong>CSS3</strong>实现点击翻转放大一张牌，随后所有游戏规则随机显示在九宫格内的功能。</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目收获：</strong>能快速利用所学的知识借鉴现有的小游戏的规则实现Web小游戏的开发，加深了对jQuery的掌握程度，对移动端适配有了更深刻的了解，并学会了如何处理移动端默认事件带来的问题</td>
+                                </tr>
+                                <tr class="info">
+                                    <td>2048</td>
+                                    <td colspan="2"><a class="btn btn-success" href="2048">点击查看项目 <br />（可在PC端或各种移动设备上查看）</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>实现功能：</strong>使用<strong>jQuery</strong>模拟实现2048游戏，可在PC端使用，并利用<strong>百分比</strong>使其可适配不同移动端设备，使用<strong>CSS3</strong>的Animation实现了简单的移动动画效果</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目描述：</strong> <p>利用<strong>不同的事件绑定方法</strong>实现移动端和PC端事件绑定，并对事件处理函数进行封装，提高代码的复用性</p>
+                                        <p>为避免将不小心点击屏幕识别成手指移动应设置最小阈值，当移动距离大于该阈值时才移动数字</p>
+                                        <p>为了优化碰撞检测过程，选择从移动方向的最边缘处位置开始检测。为了避免连续碰撞，事先创建了一个二维数组记录棋盘格中每个格子的碰撞状态</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目收获：</strong>加深了对jQuery及移动端事件处理的掌握程度，学会了一些性能优化方法，并掌握了一种移动端适配技术</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><a class="btn btn-danger pull-right" href="jQueryProject.html">jQuery系列详细介绍，点击查看更多项目介绍</a></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="b" class="tab-pane">
+                            <table class="table">
+                                <tr class="danger">
+                                    <td>写字</td>
+                                    <td colspan="2"><a class="btn btn-success" href="writeWord">点击查看项目（可在PC端或各种移动设备上查看）</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>实现功能：</strong>使用<strong>Canvas</strong>绘制米字格，使用<strong>jQuery</strong>实现PC端根据鼠标移动、移动端根据手指触控在绘图区域绘制图形汉字的功能，
+                                        提供了不同字体颜色选择的功能，并实现了根据移动速度调整笔画粗细的功能，很好地实现了适配多种设备的具备触控写字功能的WebApp
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目描述：</strong><p>获取当前设备的屏幕宽度，当小于一定值时将绘制画布边长设置为当前屏幕宽度，否则以该值为画布边长</p>
+                                        <p>在画布上手指或鼠标按下移动开始画图，移出画布或结束触碰就结束画图，计算每次移动的速度，根据鼠标或触控移动速度改变笔画粗细</p>
+                                        <p></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目收获：</strong>加深了对Canvas绘图的了解，体会到其中的乐趣，并对移动端事件处理机制有了更深的了解</td>
+                                </tr>
+                                <tr class="info">
+                                    <td>祖玛游戏</td>
+                                    <td colspan="2"><a class="btn btn-success" href="Zuma">点击查看项目（可在PC端或各种移动设备上查看）</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>实现功能：</strong>简易版祖玛游戏，青蛙朝着鼠标点击的位置发射小球，射击沿着曲线运动的小球，当小球碰撞时两者均消失，当有小球运动到曲线终点位置时游戏结束，
+                                        以游戏时间作为游戏成绩</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目描述：</strong>实现了碰撞检测函数，并在两球碰撞后将小球信息从其存储数组中slice出去，实现了性能优化</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目收获：</strong>学会了描绘路径和绘制图像的函数分离封装，并了解到Canvas动画实现机制，对移动端性能优化技术有了更多的了解</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><a class="btn btn-danger pull-right" href="CanvasProject.html">Canvas系列详细介绍，点击查看更多项目介绍</a></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="c" class="tab-pane">
+                            <table class="table">
+                                <tr class="danger">
+                                    <td colspan="3">动感相册</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>实现功能：</strong>
+                                        <p>“动感相册”：利用<strong>CSS3</strong>实现3D折纸效果，利用<strong>jQuery</strong>实现图片的拖拽，并实现结束拖拽时拖拽对象与最近相片交换位置，
+                                            用<strong>CSS3</strong>实现动态菜单效果，并且每个每个菜单都实现了对也页面局部的控制，用<strong>Bootstrap</strong>实现侧边时钟与3D折纸的响应式布局</p>
+                                        <p>“我的男神”：用<strong>jQuery</strong>实现瀑布流布局，并实现了<strong>图片的懒加载</strong>，该部分可以在移动端看到效果，为了优化图片第一次懒加载时出现的图片“阻塞”现象，使用了 <strong>图片预加载</strong>技术</p>
+                                        <p>“我的女神”：用<strong>jQuery</strong>实现了擦开图片效果，并在擦开图片后显示3D旋转相册，同时用<strong>Canvas</strong>绘制了背景</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目收获：</strong>通过实现不同的效果加深了对CSS3的掌握程度，通过菜单控制对页面逻辑有了更深的理解，能够很熟练的使用<strong>正则表达式</strong>来简化判断过程，学会了<strong>图片懒加载</strong>技术，并能够举一反三应用到具体实践中</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><a class="btn btn-danger pull-right" href="photoAlbum.html">CSS3系列，点击查看效果</a></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li id="d" class="tab-pane">
+                            <table class="table">
+                                <tr class="danger">
+                                    <td>商务网站整站开发</td>
+                                    <td colspan="2"><a class="btn btn-success" href="100du">点击查看项目（该部分未实现移动端适配，请使用PC端观看）</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>实现功能：</strong>利用<strong>模块化布局</strong>思想实现商务网站整体布局，并用js实现了图片轮播、目录滚动等动态交互效果。</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目收获：</strong>对模块化思想有了初步了解，并学会了先提取页面类似部分进行实现，提高代码复用度</td>
+                                </tr>
+                                <tr class="info">
+                                    <td>DOM编程艺术</td>
+                                    <td colspan="2"><a class="btn btn-success" href="Wedding">点击查看项目（该部分未实现移动端适配，请使用PC端观看）</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>实现功能：</strong>通过<strong>DOM操作</strong>结合Javascript实现了简单的图片轮播、收缩列表、提取缩写列表、增强表单效果，在提交表单时使用了<strong>Ajax技术</strong>获取另一页面信息作为反馈</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>项目收获：</strong>学会了熟练的使用DOM操作，为后续熟练使用jQuery打下了良好的基础。</td>
+                                </tr>
+                            </table>
+                        </li>
                     </ul>
-                    <dl>
-                        <dt><a href="">工作收获：</a></dt>
-                        <dd>策划组织过校园歌手大赛、趣味运动会、篮球赛等大型校园集体活动；</dd>
-                        <dd>使我的人际交往能力、组织能力、应变能力有很大的提升；</dd>
-                    </dl>
-                </li>
-            </ol>
-            <input type="button" value="+" class="add" />
+                </div>
+
+            </div>
+
+            <!--工作经验-->
+            <div class="panel panel-primary work">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-briefcase"></span> <h4>工作经验</h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr class="info">
+                            <td>2015.7 - 2015.8</td>
+                            <td>湖北创锐</td>
+                            <td>前端开发</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><strong>工作内容：</strong>利用模块化布局思想实现公司网站整体布局，并用js实现了图片轮播、目录滚动等动态效果。负责公司企业文化视频制作并兼顾公司员工礼仪培训工作。</td>
+                        </tr>
+                        <tr class="info">
+                            <td>2015.9 - 至今</td>
+                            <td>西安电子科技大学研究生会</td>
+                            <td>外联部干事、体育部副部长、主席助理</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><strong>工作内容：</strong>策划组织并举办迎新晚会、趣味远动会、篮球赛、教职工排球赛、爱在西电、校友会等活动，为校园歌手大赛—唱响西电、迎新晚会拉赞助，协助主席协调各部门人员工作，负责的比赛项目获得第一名，得到老师赞赏</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <!--培训经历-->
+            <div class="panel panel-primary train">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-calendar"></span> <h4>培训经历</h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <td>2014.4 - 2014.7</td>
+                            <td>北大青鸟</td>
+                            <td>Java、HTML、CSS、mySQL</td>
+                        </tr>
+                        <tr>
+                            <td>2011.9 - 2013.9</td>
+                            <td>新世纪教育</td>
+                            <td>日语</td>
+                        </tr>
+                        <tr></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!--自我评价-->
+            <div class="panel panel-primary intro">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-pencil"></span> <h4>自我评价</h4>
+                </div>
+                <div class="panel-body">
+                    <p>本人积极乐观，工作认真负责，在校期间曾在学生会担任多职，善于和不同技术背景的人沟通合作</p>
+                </div>
+            </div>
         </div>
-        <div class="honor">
-            <img src="img/honor.png" alt="honor" />
-            <h2>荣誉证书</h2>
-            <hr />
-            <ul>
-                <li><strong>荣誉奖励</strong>青岛理工大学校长奖学金、优秀青年志愿者</li>
-                <li><strong>英语水平</strong>大学英语6级证书（CET-6）</li>
-                <li><strong>计算机证书</strong>大学计算机二级证书（C语言）</li>
-            </ul>
-            <input type="button" value="+" class="add" />
-        </div>
-        <div class="evaluate">
-            <img src="img/evaluate.png" alt="evaluate" />
-            <h2>自我评价</h2>
-            <hr />
-            <input type="text" value="本人热情大方" />
-            <input type="button" value="edit" />
-        </div>
+        <!--End main-->
+
     </div>
 </div>
+
 </body>
 </html>

@@ -1,0 +1,316 @@
+/*初始化样式*/
+nav {
+  background-color: #cff!important;
+}
+#myCollapse .nav .active {
+  background-color: #cfc!important;
+}
+li {
+  list-style: none;
+}
+/*主体样式*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 60px auto;
+  background-color: #ffc;
+}
+/* 主页部分 */
+#index {
+  position: relative;
+}
+/* 菜单部分 */
+#menu {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  top: 50px;
+  z-index: 9999;
+}
+#menu_list {
+  height: 42px;
+  width: 42px;
+  position: relative;
+  margin: 4px;
+}
+#menu_list img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 21px;
+}
+#home {
+  width: 50px;
+  height: 50px;
+  background: url(../images/home.png) no-repeat;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* 3D折纸部分 */
+@-webkit-keyframes open {
+  0% {
+    -webkit-transform: rotateX(-120deg);
+  }
+  25% {
+    -webkit-transform: rotateX(30deg);
+  }
+  50% {
+    -webkit-transform: rotateX(-15deg);
+  }
+  75% {
+    -webkit-transform: rotateX(8deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes close {
+  0% {
+    -webkit-transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-120deg);
+  }
+}
+#side {
+  position: absolute;
+  top: 0;
+}
+.side_left {
+  left: 10px;
+}
+.side_right {
+  right: 10px;
+}
+#btn {
+  width: 160px;
+  margin: 4px 22px;
+  text-align: center;
+  position: relative;
+}
+#fold_wrap {
+  width: 160px;
+  margin: 40px auto;
+  -webkit-perspective: 800px;
+  -webkit-transform-style: preserve-3d;
+}
+#fold_wrap h2 {
+  height: 60px;
+  background: #F60;
+  color: #fff;
+  font: 16px/60px "微软雅黑";
+  text-align: center;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+}
+#fold_wrap div {
+  position: absolute;
+  top: 52px;
+  width: 100%;
+  left: 0;
+  -webkit-transform-origin: top;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateX(-120deg);
+}
+#fold_wrap span {
+  display: block;
+  height: 50px;
+  background: greenyellow;
+  font: 14px/50px "宋体";
+  text-align: center;
+  box-shadow: inset 0 0 0 25px #000000;
+  transition: 1s;
+}
+#fold_wrap > div {
+  top: 60px;
+}
+#btn {
+  position: absolute;
+}
+#fold_wrap .open {
+  -webkit-animation: 2s linear open;
+  -webkit-transform: rotateX(0deg);
+}
+#fold_wrap .open > span {
+  box-shadow: inset 0 0 0 25px rgba(0, 0, 0, 0);
+}
+#fold_wrap .close {
+  -webkit-animation: 1s linear close;
+  -webkit-transform: rotateX(-120deg);
+}
+/* 九宫格区域 photo */
+#photo {
+  height: auto;
+  position: absolute;
+  top: 240px;
+  box-sizing: content-box;
+}
+#photo #ul1 {
+  width: 12rem;
+  position: relative;
+  margin: 0.2rem auto;
+}
+#photo li {
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0.16rem;
+  float: left;
+  list-style: none;
+  box-sizing: content-box;
+}
+#photo img {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+/* 我的男神 waterfall */
+#wf {
+  position: relative;
+  display: none;
+}
+#wf .box {
+  padding: 10px 0 0 10px;
+  float: left;
+}
+#wf .pic {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 4px #ccc;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#wf .pic img {
+  width: 150px;
+  height: auto;
+}
+/* 我的女神 */
+#beauty {
+  margin: 0 auto;
+  position: relative;
+  display: none;
+}
+#beauty h4 {
+  text-align: center;
+}
+#beauty .img-box {
+  width: 542px;
+  height: 742px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid #cfc;
+  border-radius: 10px;
+  box-shadow: 0 0 4px #cfc;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#beauty .img-box .pic {
+  width: 500px;
+  height: 700px;
+  margin: 0 auto;
+  background-image: url(../images/1_0.jpg);
+  background-size: 500px 700px;
+  position: relative;
+}
+#beauty .img-box .pic div {
+  width: 100px;
+  height: 100px;
+  background-image: url(../images/shade.jpg);
+  background-size: 100px 100px;
+  position: absolute;
+  transition: 2s;
+}
+/* 擦开有惊喜 surprise */
+/* rotate */
+@-webkit-keyframes show {
+  0% {
+    -webkit-transform: rotateX(180deg);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: rotateX(-25deg);
+    opacity: 1;
+  }
+  60% {
+    -webkit-transform: rotateX(18deg);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: rotateX(-12deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: rotateX(8deg);
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: rotateX(-4deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes hide {
+  0% {
+    -webkit-transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+    opacity: 0;
+  }
+}
+#surprise {
+  display: none;
+}
+#rotate {
+  width: 402px;
+  height: 302px;
+  position: relative;
+  margin: 100px auto;
+  border: 1px solid #000;
+  -webkit-perspective: 800px;
+  -webkit-transform-style: preserve-3d;
+}
+#rotate img {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: bottom;
+  -webkit-transform: rotateX(180deg);
+  opacity: 0;
+}
+#rotate input {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+  top: 100px;
+  position: absolute;
+}
+#rotate input:nth-of-type(1) {
+  left: -100px;
+}
+#rotate input:nth-of-type(2) {
+  right: -100px;
+}
+.show {
+  -webkit-animation: 0.6s linear show;
+  -webkit-transform: rotateX(0deg) !important;
+  opacity: 1!important;
+}
+.hide {
+  -webkit-animation: 0.6s linear hide;
+  -webkit-transform: rotateX(-180deg) !important;
+  opacity: 0!important;
+}

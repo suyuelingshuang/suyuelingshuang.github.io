@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/photo.css" />
+    <title>CSS3系列</title>
+    <!--使ie8支持html5、媒体-->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style id="css">
+        #slide_wrap{width: 400px;margin: 100px auto 0;}
+
+        #picList{width: 400px;height: 180px;-webkit-perspective: 800px;}
+        #picList li{width: 25px;height: 180px;position: relative;-webkit-transform-style: preserve-3d;
+            -webkit-transform-origin:center center -90px;float: left;transition: 1s;/*-webkit-transform: rotateX(-180deg);*/ }
+
+        #picList a{display: block;width: 100%;height: 100%;position: absolute;left:0;top:0;}
+        #picList li a:nth-of-type(1){background: url("images/media_1.jpg") no-repeat;/*display: none;*/}
+        #picList li a:nth-of-type(2){background: url("images/media_2.jpg") no-repeat;-webkit-transform-origin: bottom;top:-180px;  -webkit-transform: rotateX(90deg);}
+        #picList li a:nth-of-type(3){background: url("images/media_3.jpg") no-repeat;-webkit-transform: translateZ(-180px) rotateX(180deg);}
+        #picList li a:nth-of-type(4){background: url("images/media_4.jpg") no-repeat;-webkit-transform-origin:top;-webkit-transform: rotateX(-90deg);top:180px; }
+
+        #picList li span{position: absolute;width: 180px;height: 180px;background:#333; }
+        #picList li span:nth-of-type(1){-webkit-transform-origin: left;-webkit-transform: rotateY(90deg);left:0;}
+        #picList li span:nth-of-type(2){-webkit-transform-origin: right;-webkit-transform: rotateY(-90deg);right:0;}
+        #btns{float: right;padding: 10px 0;}
+        #btns li{width: 40px;height: 40px;background: #000;color: #fff;
+            border-radius: 50%;font:italic 30px/40px Arial;float: left;margin: 0 5px;text-align: center;  cursor: pointer;}
+        #btns li.active{background:#f60; }
+
+        #clock_wrap{width:200px;height:200px;border: 2px solid #000;border-radius: 50%;background-color:#fff;margin:0 auto;box-sizing: content-box;position: relative;}
+        #clock_wrap ul{margin:0;padding:0;height: 200px;position: relative;list-style: none;}
+        #clock_wrap ul li{width: 2px;height: 6px;background: #000;position: absolute;left: 99px;top:0;-webkit-transform-origin:center 100px;}
+
+        #clock_wrap ul li:nth-of-type(5n+1){height: 12px; }
+        #hour{width: 6px;height: 45px;background: #000;position: absolute;left:97px;top:55px;
+            -webkit-transform-origin: bottom;}
+        #min{width: 4px;height: 65px;background: #999;position: absolute;left:98px;top:35px;
+            -webkit-transform-origin: bottom;}
+        #sec{width: 2px;height: 80px;background: red;position: absolute;left:99px;top:20px;
+            -webkit-transform-origin: bottom;}
+        #icon{width: 12px;height: 12px;background: #000;border-radius: 50px;position: absolute;left: 94px;top:94px;}
+    </style>
+    <script>
+        (function () {
+            var html = document.documentElement;
+            var hW = html.getBoundingClientRect().width;
+            html.style.fontSize = hW/15 + 'px';
+            //总宽度/15 = 1rem
+        })();
+    </script>
+</head>
+<body>
+<!--Header-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button id="to_btn" class="navbar-toggle" data-toggle="collapse" data-target="#myCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img class="my-logo" src="img/logo.png" alt="myLogo" /></a>
+
+        </div>
+
+        <div id="myCollapse" class="collapse navbar-collapse">
+            <ul id="nav" class="nav navbar-nav pull-right">
+                <li class="index active"><a href="#">动感相册</a></li>
+                <li class="hero"><a href="javascript:;">我的男神</a></li>
+                <li class="heroine"><a href="javascript:;">我的女神</a></li>
+                <li class="dropdown myDropDownStyle">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jQueryProject.html">jQuery系列</a></li>
+                        <li><a href="CanvasProject.html">Canvas系列</a></li>
+                        <li><a href="100du">整站开发系列</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.html">个人简历</a></li>
+                        <li><a href="https://github.com/suyuelingshuang">GitHub</a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="https://suyuelingshuang.github.io/">Blog</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!--主页部分-->
+<div id="index">
+    <div id="menu">
+        <div id="menu_list">
+            <img src="images/prev.png" alt=""/>
+            <img src="images/open.png" alt="" />
+            <img src="images/clos.png" alt="" />
+            <img src="images/full.png" alt="" />
+            <img src="images/refresh.png" alt="" />
+        </div>
+        <div id="home"></div>
+    </div>
+    <div id="slide_wrap">
+        <ul id="picList"></ul>
+        <ol id="btns">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+    </div>
+    <div id="side" class="side_left visible-lg">
+        <div id="clock_wrap">
+            <ul id="list"></ul>
+            <div id="hour"></div>
+            <div id="min"></div>
+            <div id="sec"></div>
+            <div id="icon"></div>
+        </div>
+        <input type="button" class="btn" value="展开/收起" id="btn" />
+        <div id="fold_wrap">
+            <h2>项目列表</h2>
+            <div>
+                <span><a href="">2048</a></span>
+                <div>
+                    <span><a href="">祖玛游戏</a></span>
+                    <div>
+                        <span><a href="">绚丽时钟</a></span>
+                        <div>
+                            <span><a href="">米字格写字</a></span>
+                            <div>
+                                <span><a href="">璀璨星空</a></span>
+                                <div>
+                                    <span><a href="">商务网站</a></span>
+                                    <!--<div>
+                                        <span><a href="">2048</a></span>
+                                        <div>
+                                            <span><a href="">2048</a></span>
+                                            <div>
+                                                <span><a href="">2048</a></span>
+                                                <div>
+                                                    <span><a href="">2048</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="photo" class="col-lg-10 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
+        <ul id="ul1">
+            <li><img src="images/me_1.jpg" /></li>
+            <li><img src="images/me_2.jpg" /></li>
+            <li><img src="images/me_3.jpg" /></li>
+            <li><img src="images/me_4.jpg" /></li>
+            <li><img src="images/me_5.jpg" /></li>
+            <li><img src="images/me_6.jpg" /></li>
+            <li><img src="images/me_7.jpg" /></li>
+            <li><img src="images/me_8.jpg" /></li>
+            <li><img src="images/me_9.jpg" /></li>
+        </ul>
+    </div>
+</div>
+
+<!--我的男神 waterfall-->
+<div id="wf">
+    <div class="box">
+        <div class="pic">
+            <img src="images/0.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/1.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/2.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/3.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/4.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/5.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/6.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/7.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/8.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/9.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/10.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/11.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/12.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/13.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/14.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/15.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/16.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/17.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/18.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/19.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/20.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/21.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/22.jpg" alt="" />
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="images/23.jpg" alt="" />
+        </div>
+    </div>
+</div>
+
+<!--我的女神 擦出相片有惊喜-->
+<div id="beauty">
+    <h4 class="tishi">擦开有惊喜</h4>
+    <div class="img-box">
+        <div class="pic"></div>
+    </div>
+    <div id="surprise">
+        <div id="rotate">
+            <input type="button" value="上一张" />
+            <input type="button" value="下一张" />
+            <img src="images/rotate_0.jpg" class="show" alt="">
+            <img src="images/rotate_1.jpg" alt="">
+            <img src="images/rotate_2.jpg" alt="">
+            <img src="images/rotate_3.jpg" alt="">
+            <img src="images/rotate_4.jpg" alt="">
+        </div>
+        <h4>本来使用Canvas绘制了动态背景，但不知为啥该部分导致导航栏按钮失灵，故被注释，欢迎解开注释观看效果，见photoAlbum.js中599-613行</h4>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/photoAlbum.js"></script>
+</body>
+</html>
