@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>祖玛小游戏</title>
+    <style>
+        body{margin:0 auto;padding:0;background: #ccc;}
+        #div1{background: #ffffff;width: 300px;margin: 20px auto;}
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            var oC1 = document.getElementById('c1');
+            var oContext = oC1.getContext('2d');
+
+            setInterval(function () {
+
+                oContext.save();
+                oContext.font = "40px 楷体 italic";
+                oContext.textBaseline = 'top';
+                oContext.fillStyle = "#ff33ff";
+                oContext.shadowOffsetX = 2;
+                oContext.shadowOffsetY = 2;
+                oContext.shadowColor = '#ffccff';
+                oContext.shadowBlur = 2;
+
+                var w = oContext.measureText("Wendy Shop").width;
+                var h = 60;
+                oContext.fillText("Wendy Shop",(oC1.width-w)/2,0);
+
+                oContext.restore();
+
+            },1000/60);
+
+        };
+    </script>
+</head>
+<body>
+
+<div id="div1">
+    <canvas id="c1" width="300" height="60"></canvas>
+</div>
+
+</body>
+</html>
